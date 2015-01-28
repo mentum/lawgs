@@ -1,8 +1,8 @@
 var AWS 		= require('aws-sdk'),
-Q 			= require('q'),
-Rx 			= require('rx'),
-extend 		= require('extend'),
-Enumerable 	= require('linq');
+Q 				= require('q'),
+Rx 				= require('rx'),
+extend 			= require('extend'),
+Enumerable 		= require('linq');
 
 var cw;
 
@@ -22,10 +22,10 @@ function CloudWatchLogger(logGroupName) {
 	var me = this;
 
 	// Public properties
-	this.showDebugLogs = false;
-	this.uploadMaxTimer = 5000;
-	this.uploadBatchSize = 500;
-	this.appendType = true;
+	this.showDebugLogs 		= false;
+	this.uploadMaxTimer 	= 5000;
+	this.uploadBatchSize 	= 500;
+	this.appendType 		= true;
 
 	// Private members
 	var logGroupName = logGroupName;
