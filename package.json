@@ -1,0 +1,34 @@
+{
+  "name": "lawgs",
+  "version": "0.0.0",
+  "description": "CloudWatch Logs made easy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mentum/lawgs.git"
+  },
+  "keywords": [
+    "aws",
+    "cloudwatch",
+    "logs",
+    "logging",
+    "cloudwatchlogs",
+    "amazon"
+  ],
+  "author": "mentum",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mentum/lawgs/issues"
+  },
+  "homepage": "https://github.com/mentum/lawgs",
+  "dependencies": {
+    "aws-sdk": "^2.1.8",
+    "extend": "^2.0.0",
+    "linq": "^3.0.4-beta",
+    "q": "^1.1.2",
+    "rx": "^2.3.24"
+  }
+}
