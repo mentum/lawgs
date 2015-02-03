@@ -34,11 +34,7 @@ Simply create your logger and you are ready to go.
 
 ```js
 var logger  = lawgs.getOrCreate('SuperbowlLogs'); /* LogGroup */
-
-logger.log('touchdown', { // or any serializable object
-	team: 'Patriots',
-	weight: 7
-});
+logger.log('touchdown', { team: 'Patriots', weight: 7 });
 ```
 
 ## Example
