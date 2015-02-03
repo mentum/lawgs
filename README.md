@@ -42,5 +42,22 @@ logger.log('touchdown', { // or any serializable object
 ## Example
 See ```example.js``` for a full working example.
 
+Running the example, you get the following output:
+```
+Disposed subscription
+Resubscribed
+SuperbowlLogs >> uploadQueuedLogs triggered with  2  logs
+Checking if log group exists: SuperbowlLogs
+Creating log group: SuperbowlLogs
+Checking if log stream exists: error
+Checking if log stream exists: touchdown
+Creating log stream: error
+Creating log stream: touchdown
+Uploading logs
+Uploading logs
+Logs uploaded
+Logs uploaded
+```
+
 ## Contributing
 Feel free to open issues and open pull requests.
