@@ -1,4 +1,6 @@
 ![logo](./logo50x50.png) Lawgs
+==============================
+
 Nodejs logging to CloudWatch Logs made easy
 
 ## Features
