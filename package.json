@@ -1,7 +1,7 @@
 {
   "name": "lawgs",
-  "version": "0.0.0",
-  "description": "CloudWatch Logs made easy",
+  "version": "1.0.1",
+  "description": "AWS CloudWatch Logs made easy",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
