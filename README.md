@@ -69,4 +69,5 @@ Feel free to open issues and open pull requests.
 
 ## Related projects
 [Lambdaws](https://github.com/mentum/lambdaws) (AWS Lambda Wrapper)
+
 [Superbowl Notifier](https://github.com/mentum/superbowl_notifier) (Used Lawgs to log high-volume tweets)
