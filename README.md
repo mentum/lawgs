@@ -5,9 +5,9 @@ Nodejs logging to CloudWatch Logs made easy
 - Creates Log Groups automatically
 - Creates Log Streams automatically
 - Periodic upload
-- Automatic logs batching
+- Automatic log batching
 - JSON logging support
-- loggers instances are shared accross modules
+- logger instances are shared across modules
 
 ## Get it
 ``` npm install lawgs ```
@@ -21,14 +21,14 @@ var lawgs = require('./index');
 
 lawgs.config({
 	aws: {
-		accessKeyId: '********', /* Optional is credentials are set in ~/.aws/credentials */
+		accessKeyId: '********', /* Optional if credentials are set in ~/.aws/credentials */
 		secretAccessKey: '******', /* Optional */
 		region: 'us-east-1' /* Required */
 	}
 });
 ```
 
-Create a logger, then you are ready to go.
+Simply create your logger and you are ready to go.
 
 ```js
 var logger  = lawgs.getOrCreate('SuperbowlLogs'); /* LogGroup */
@@ -40,7 +40,7 @@ logger.log('touchdown', { // or any serializable object
 ```
 
 ## Example
-See ```example.js``` for a full working example
+See ```example.js``` for a full working example.
 
 ## Contributing
-Please feel free to open issues and to make pull requests.
+Feel free to open issues and open pull requests.
