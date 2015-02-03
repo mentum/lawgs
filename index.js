@@ -25,7 +25,6 @@ function CloudWatchLogger(logGroupName) {
 	this.showDebugLogs 		= false;
 	this.uploadMaxTimer 	= 5000;
 	this.uploadBatchSize 	= 500;
-	this.appendType 		= true;
 
 	// Private members
 	var logGroupName = logGroupName;
@@ -107,8 +106,13 @@ function CloudWatchLogger(logGroupName) {
 	};
 
 	// Public API
-	this.configure = function(config) {
-		extend(this, config);
+	this.config = function(conf) {
+		extend(this, conf);
+		
+		if(conf.settings) {
+			settings = conf.settings;
+		}
+
 		AWS.config.update(settings.aws);
 		cw = new AWS.CloudWatchLogs({ apiVersion: '2015-01-28' });
 		initializeStream();
@@ -234,12 +238,21 @@ function CloudWatchLogger(logGroupName) {
 			|| DEFAULT_TIMEOUT, 'Could not communicate with AWS in a timely fashion');
 	}
 
-	this.configure({ });
+	this.config({ });
 };
 
-module.exports = function(logGroupName) {
-	if(!loggers.hasOwnProperty(logGroupName)) {
-		loggers[logGroupName] = new CloudWatchLogger(logGroupName);
+module.exports = {
+
+	getOrCreate: function(logGroupName) {
+		if(!loggers.hasOwnProperty(logGroupName)) {
+			loggers[logGroupName] = new CloudWatchLogger(logGroupName);
+		}
+
+		return loggers[logGroupName];
+	},
+
+	config: function(s) {
+		extend(true, settings, s);
 	}
-	return loggers[logGroupName];
+
 };
