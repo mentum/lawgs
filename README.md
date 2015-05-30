@@ -30,6 +30,13 @@ lawgs.config({
 });
 ```
 
+If you are using roles, you will need the following roles:
+- logs:DescribeLogGroups
+- logs:DescribeLogStreams
+- logs:CreateLogGroup
+- logs:CreateLogStream
+- logs:PutLogEvents
+
 Simply create your logger and you are ready to go.
 
 ```js
