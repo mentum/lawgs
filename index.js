@@ -3,6 +3,8 @@ Q 				= require('q'),
 Rx 				= require('rx'),
 extend 			= require('extend'),
 Enumerable 		= require('linq');
+var EventEmitter= require('events').EventEmitter;
+var util 		= require("util");
 
 var cw;
 
@@ -80,6 +82,7 @@ function CloudWatchLogger(logGroupName) {
 						.then(function(response) {
 							nextSequenceTokens[logStreamName] = response.nextSequenceToken;
 							_log('Logs uploaded');
+							me.emit('uploaded');
 						});
 				});
 
@@ -240,6 +243,8 @@ function CloudWatchLogger(logGroupName) {
 
 	this.config({ });
 };
+
+util.inherits(CloudWatchLogger, EventEmitter);
 
 module.exports = {
 
