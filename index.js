@@ -53,8 +53,8 @@ function CloudWatchLogger(logGroupName) {
 		var createLogGroup = Q(true);
 		if(!logGroupExists) {
 			createLogGroup = _createLogGroupIfDoesntExist(logGroupName)
-			.catch(function(err) { console.error(err); })
-			.then(function() { logGroupExists = true; });
+			.then(function() { logGroupExists = true; })
+			.catch(function(err) { console.error(err); });
 		}
 
 		createLogGroup.then(function() {
@@ -67,8 +67,8 @@ function CloudWatchLogger(logGroupName) {
 
 				if(!(logStreamName in knownLogStreams)) {
 					createLogStream = _createLogStreamIfDoesntExist(logGroupName, logStreamName)
-					.catch(function(err) { console.error(err); })
 					.then(function() { knownLogStreams[logStreamName] = true; })
+					.catch(function(err) { console.error(err); });
 				}
 
 				createLogStream.then(function() {
@@ -78,12 +78,12 @@ function CloudWatchLogger(logGroupName) {
 					});
 
 					_uploadLogs(logGroupName, logStreamName, logsToUpload, nextSequenceTokens[logStreamName])
-						.catch(function(err){ console.log(err); })
 						.then(function(response) {
 							nextSequenceTokens[logStreamName] = response.nextSequenceToken;
 							_log('Logs uploaded');
 							me.emit('uploaded');
-						});
+						})
+						.catch(function(err){ console.log(err); });
 				});
 
 			})
