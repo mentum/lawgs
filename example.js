@@ -3,7 +3,7 @@ var lawgs = require('./index');
 // Lawgs configuration is mandatory
 lawgs.config({
 	aws: {
-		accessKeyId: '********', /* Optional is credentials are set in ~/.aws/credentials */
+		accessKeyId: '********', /* Optional if credentials are set in ~/.aws/credentials */
 		secretAccessKey: '******', /* Optional */
 		region: 'us-east-1' /* Required */
 	}
@@ -15,7 +15,7 @@ var logger2 = lawgs.getOrCreate('SuperbowlLogs'); /* Returns the same instance (
 // Logger configuration is optional
 logger.config({
 	// Shows the debugging messages
-	showDebugLogs: true, /* Default to false */
+	showDebugLogs: true, /* Defaults to false */
 	// Change the frequency of log upload, regardless of the batch size
 	uploadMaxTimer: 1000, /* Defaults to 5000ms */
 	// Max batch size. An upload will be triggered if this limit is reached within the max upload time
